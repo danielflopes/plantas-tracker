@@ -68,3 +68,9 @@ regas.json           última data de rega por planta (id → data)
 fotos/               fotos das plantas
 manifest.json        permite instalar no ecrã principal do telemóvel
 ```
+
+## Nota: cache do browser
+
+`index.html` referencia `estilo.css` e `app.js` com um sufixo `?v=N` (ex.: `estilo.css?v=2`). Isto existe porque os browsers guardam estes ficheiros em cache durante bastante tempo — sem isto, depois de um `git push`, alguns dispositivos continuam a usar a versão antiga do CSS/JS mesmo com o HTML novo, o que pode desalinhar a página (ex.: elementos sem estilo, a parecer "partidos").
+
+**Sempre que editares `estilo.css` ou `app.js`, aumenta o número em `?v=N` nas tags correspondentes em `index.html`**, para forçar os browsers a irem buscar a versão nova. Editar só `dados/plantas.json` ou `regas.json` não precisa disto (já não ficam em cache).

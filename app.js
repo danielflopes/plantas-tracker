@@ -533,7 +533,7 @@
     initSettings();
 
     Promise.all([
-      fetch('dados/plantas.json').then(function(r){ return r.json(); }),
+      fetch('dados/plantas.json', { cache: 'no-store' }).then(function(r){ return r.json(); }),
       loadRegas()
     ]).then(function(results){
       plantas = results[0].plantas;

@@ -51,7 +51,7 @@ O token fica guardado só no `localStorage` do teu navegador — nunca é enviad
 
 ## Fotos em falta
 
-`fotos/13-phalaenopsis.jpg`, `fotos/14-pachira-aquatica.jpg` e `fotos/15-samambaia.jpg` ainda não existem. Enquanto faltarem, o site mostra um placeholder (fundo verde com a inicial do nome) em vez de quebrar.
+Todas as 15 plantas têm foto. Se adicionares uma planta nova sem foto ainda, o site mostra um placeholder (fundo verde com a inicial do nome) em vez de quebrar, até a foto ser adicionada.
 
 ## Site
 

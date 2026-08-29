@@ -6,11 +6,13 @@
   var LS_REGAS = 'pt_regas_cache';
   var LS_PENDING = 'pt_pending_sync';
   var LS_SORT = 'pt_sort';
+  var LS_VIEW = 'pt_view';
 
   var plantas = [];
   var regas = {};
   var sha = null;
   var sortMode = 'urgencia';
+  var viewMode = 'cards';
 
   // ---------- utilidades de data ----------
   function pad(n){ return String(n).padStart(2, '0'); }
@@ -73,7 +75,7 @@
 
   function buildCard(planta){
     var card = document.createElement('div');
-    card.className = 'card';
+    card.className = 'card plant-item';
     card.dataset.id = planta.id;
     var initial = (planta.nomeComum || '?').trim().charAt(0).toUpperCase();
 
@@ -147,6 +149,89 @@
     return card;
   }
 
+  function buildListRow(planta){
+    var row = document.createElement('div');
+    row.className = 'list-row plant-item';
+    row.dataset.id = planta.id;
+    var initial = (planta.nomeComum || '?').trim().charAt(0).toUpperCase();
+    var detailId = 'lr-detail-' + planta.id;
+
+    row.innerHTML =
+      '<div class="lr-main">' +
+        '<button type="button" class="lr-toggle" aria-expanded="false" aria-controls="' + detailId + '">' +
+          '<svg class="lr-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>' +
+          '<span class="lr-num">' + planta.id + '</span>' +
+          '<span class="lr-name">' + escapeHtml(planta.nomeComum) + '</span>' +
+        '</button>' +
+        '<div class="lr-gauges">' + gaugeLuz(planta.luz) + gaugeAgua(planta.agua) + '</div>' +
+        '<div class="lr-status">' +
+          '<div class="urgency-track mini"><div class="urgency-fill"></div></div>' +
+          '<span class="urgency-text"></span>' +
+        '</div>' +
+        '<button type="button" class="water-btn compact" aria-label="Marcar ' + escapeHtml(planta.nomeComum) + ' como regada hoje">' +
+          '<span class="check" aria-hidden="true">✓</span><span class="label-txt">Reguei hoje</span>' +
+        '</button>' +
+      '</div>' +
+      '<div class="lr-detail" id="' + detailId + '" hidden>' +
+        '<div class="lr-detail-inner">' +
+          '<div class="lr-photo">' +
+            '<img src="' + planta.foto + '" alt="' + escapeHtml(planta.nomeComum) + '" loading="lazy">' +
+            '<div class="photo-fallback" hidden>' + initial + '</div>' +
+          '</div>' +
+          '<div class="lr-detail-text">' +
+            '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
+            '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
+            '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
+            '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
+            '<details class="fix-date">' +
+              '<summary>outra data</summary>' +
+              '<div class="fix-date-row">' +
+                '<input type="date" aria-label="Escolher outra data de rega">' +
+                '<button type="button" class="btn-confirm-date">OK</button>' +
+              '</div>' +
+            '</details>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    var img = row.querySelector('.lr-photo img');
+    var fallback = row.querySelector('.lr-photo .photo-fallback');
+    img.addEventListener('error', function(){
+      img.hidden = true;
+      fallback.hidden = false;
+    }, { once: true });
+
+    var toggleBtn = row.querySelector('.lr-toggle');
+    var detail = row.querySelector('.lr-detail');
+    toggleBtn.addEventListener('click', function(){
+      var open = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      detail.hidden = open;
+      row.classList.toggle('open', !open);
+    });
+
+    var dateInput = row.querySelector('input[type=date]');
+    dateInput.max = todayISO();
+
+    var waterBtn = row.querySelector('.water-btn');
+    waterBtn.addEventListener('click', function(){
+      markWatered(planta.id, todayISO());
+      pulseButton(waterBtn);
+    });
+
+    var fixDate = row.querySelector('.fix-date');
+    row.querySelector('.btn-confirm-date').addEventListener('click', function(){
+      var val = dateInput.value;
+      if(!val) return;
+      if(val > todayISO()) val = todayISO();
+      markWatered(planta.id, val);
+      fixDate.removeAttribute('open');
+    });
+
+    applyUrgency(row, planta);
+    return row;
+  }
+
   function applyUrgency(card, planta){
     var u = computeUrgency(planta);
     var fill = card.querySelector('.urgency-fill');
@@ -175,9 +260,9 @@
 
   function markWatered(id, dateStr){
     regas[id] = dateStr;
-    var card = document.querySelector('.card[data-id="' + id + '"]');
+    var item = document.querySelector('.plant-item[data-id="' + id + '"]');
     var planta = plantas.filter(function(p){ return p.id === id; })[0];
-    if(card && planta) applyUrgency(card, planta);
+    if(item && planta) applyUrgency(item, planta);
     updateSummary();
     syncSave();
   }
@@ -217,7 +302,9 @@
   function render(){
     var grid = document.getElementById('grid');
     grid.innerHTML = '';
-    sortedPlantas().forEach(function(pl){ grid.appendChild(buildCard(pl)); });
+    grid.classList.toggle('list-view', viewMode === 'list');
+    var builder = viewMode === 'list' ? buildListRow : buildCard;
+    sortedPlantas().forEach(function(pl){ grid.appendChild(builder(pl)); });
     updateSummary();
   }
 
@@ -229,6 +316,21 @@
       b.addEventListener('click', function(){
         sortMode = b.dataset.sort;
         localStorage.setItem(LS_SORT, sortMode);
+        buttons.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        render();
+      });
+    });
+  }
+
+  function initViewToggle(){
+    var buttons = document.querySelectorAll('.view-btn');
+    viewMode = localStorage.getItem(LS_VIEW) || 'cards';
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', b.dataset.view === viewMode ? 'true' : 'false');
+      b.addEventListener('click', function(){
+        if(b.dataset.view === viewMode) return;
+        viewMode = b.dataset.view;
+        localStorage.setItem(LS_VIEW, viewMode);
         buttons.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
         render();
       });
@@ -421,6 +523,7 @@
   // ---------- arranque ----------
   function init(){
     initSortbar();
+    initViewToggle();
     initSettings();
 
     Promise.all([

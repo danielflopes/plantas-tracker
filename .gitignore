@@ -2,3 +2,4 @@
 *.log
 BRIEFING-CLAUDE-CODE.md
 referencia/
+.claude/scheduled_tasks.lock

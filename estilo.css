@@ -182,9 +182,9 @@ h2.plant-name{
 
 .qty-badge{
   display:inline-block;vertical-align:middle;margin-left:7px;
-  font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:700;
-  color:var(--forest);background:var(--gold);
-  padding:2px 7px;border-radius:999px;letter-spacing:0.01em;
+  font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;
+  color:var(--moss);background:transparent;border:1px solid var(--line);
+  padding:1px 7px;border-radius:999px;letter-spacing:0.01em;
 }
 .qty-note{
   font-size:12.5px;line-height:1.5;color:var(--forest);font-weight:500;

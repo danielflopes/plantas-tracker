@@ -160,6 +160,10 @@
       '<div class="lr-main">' +
         '<button type="button" class="lr-toggle" aria-expanded="false" aria-controls="' + detailId + '">' +
           '<svg class="lr-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg>' +
+          '<span class="lr-thumb">' +
+            '<img src="' + planta.foto + '" alt="" loading="lazy">' +
+            '<span class="photo-fallback" hidden>' + initial + '</span>' +
+          '</span>' +
           '<span class="lr-num">' + planta.id + '</span>' +
           '<span class="lr-name">' + escapeHtml(planta.nomeComum) + '</span>' +
         '</button>' +
@@ -194,12 +198,14 @@
         '</div>' +
       '</div>';
 
-    var img = row.querySelector('.lr-photo img');
-    var fallback = row.querySelector('.lr-photo .photo-fallback');
-    img.addEventListener('error', function(){
-      img.hidden = true;
-      fallback.hidden = false;
-    }, { once: true });
+    [row.querySelector('.lr-thumb'), row.querySelector('.lr-photo')].forEach(function(box){
+      var img = box.querySelector('img');
+      var fallback = box.querySelector('.photo-fallback');
+      img.addEventListener('error', function(){
+        img.hidden = true;
+        fallback.hidden = false;
+      }, { once: true });
+    });
 
     var toggleBtn = row.querySelector('.lr-toggle');
     var detail = row.querySelector('.lr-detail');
@@ -324,7 +330,7 @@
 
   function initViewToggle(){
     var buttons = document.querySelectorAll('.view-btn');
-    viewMode = localStorage.getItem(LS_VIEW) || 'cards';
+    viewMode = localStorage.getItem(LS_VIEW) || 'list';
     buttons.forEach(function(b){
       b.setAttribute('aria-pressed', b.dataset.view === viewMode ? 'true' : 'false');
       b.addEventListener('click', function(){

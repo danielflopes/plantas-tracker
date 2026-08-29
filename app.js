@@ -52,7 +52,21 @@
     else if(dias === 1) texto = 'há 1 dia';
     else texto = 'há ' + dias + ' dias';
     if(urgente) texto += ' — regar!';
-    return { registrado: true, dias: dias, p: p, threshold: threshold, cor: cor, urgente: urgente, texto: texto, dateStr: dateStr };
+
+    var diasAte = planta.intervaloDias - dias;
+    var textoProxima;
+    if(diasAte > 1) textoProxima = 'em ' + diasAte + ' dias';
+    else if(diasAte === 1) textoProxima = 'amanhã';
+    else if(diasAte === 0) textoProxima = 'hoje';
+    else textoProxima = 'atrasada ' + (diasAte === -1 ? '1 dia' : Math.abs(diasAte) + ' dias');
+
+    return { registrado: true, dias: dias, p: p, threshold: threshold, cor: cor, urgente: urgente, texto: texto, textoProxima: textoProxima, dateStr: dateStr };
+  }
+
+  function formatDatePt(dateStr){
+    var parts = dateStr.split('-').map(Number);
+    var d = new Date(parts[0], parts[1] - 1, parts[2]);
+    return d.toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' });
   }
 
   // ---------- render ----------
@@ -194,6 +208,7 @@
           '</div>' +
           '<div class="lr-detail-text">' +
             '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
+            '<p class="lr-last-rega" hidden></p>' +
             '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
             '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
@@ -254,19 +269,26 @@
     var fill = card.querySelector('.urgency-fill');
     var text = card.querySelector('.urgency-text');
     var dateInput = card.querySelector('input[type=date]');
+    var compact = card.classList.contains('list-row');
+    var lastRega = card.querySelector('.lr-last-rega');
     if(!u.registrado){
       fill.className = 'urgency-fill neutral';
       fill.style.width = '100%';
       fill.style.background = '';
       text.textContent = 'sem registo';
       text.classList.remove('urgent');
+      if(lastRega) lastRega.hidden = true;
     } else {
       fill.className = 'urgency-fill';
       fill.style.width = (u.p * 100).toFixed(0) + '%';
       fill.style.background = u.cor;
-      text.textContent = u.texto;
+      text.textContent = compact ? u.textoProxima : u.texto;
       text.classList.toggle('urgent', u.urgente);
       dateInput.value = u.dateStr;
+      if(lastRega){
+        lastRega.textContent = 'Última rega: ' + formatDatePt(u.dateStr);
+        lastRega.hidden = false;
+      }
     }
   }
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantas Tracker</title>
+<meta name="description" content="Regas das plantas de casa, num relance.">
+<meta name="theme-color" content="#24422C">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="top-row">
+      <div>
+        <div class="eyebrow">Coleção pessoal · 14 espécies</div>
+        <h1>Plantas Tracker</h1>
+      </div>
+      <button type="button" class="gear-btn" id="btn-definicoes" aria-label="Definições">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <p class="summary" id="resumo">A calcular…</p>
+    <div class="sync-warning hidden" id="aviso-sync">
+      <span class="dot"></span>
+      <span id="aviso-sync-texto">não está a sincronizar — só neste dispositivo</span>
+    </div>
+
+    <div class="sortbar" id="sortbar">
+      <span class="sb-label">Ordenar</span>
+      <button type="button" data-sort="urgencia" aria-pressed="true">Urgência</button>
+      <button type="button" data-sort="numero" aria-pressed="false">Número</button>
+      <button type="button" data-sort="nome" aria-pressed="false">Nome</button>
+      <button type="button" data-sort="luz" aria-pressed="false">Luz</button>
+      <button type="button" data-sort="agua" aria-pressed="false">Água</button>
+    </div>
+  </header>
+
+  <main class="grid" id="grid" aria-live="polite"></main>
+
+  <footer>
+    Plantas Tracker · dados guardados em <code>regas.json</code> neste repositório
+  </footer>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <button type="button" class="settings-close" id="btn-fechar-definicoes" aria-label="Fechar">✕</button>
+    <h2 id="settings-title">Definições</h2>
+    <p>Para sincronizar as regas entre o telemóvel e o computador, cola aqui um token pessoal do GitHub (fine-grained, só com acesso de leitura e escrita a este repositório). O token fica guardado apenas neste dispositivo.</p>
+    <label for="input-token">Token de acesso (GitHub)</label>
+    <input type="password" id="input-token" autocomplete="off" spellcheck="false" placeholder="github_pat_…">
+    <label for="input-repo">Repositório (dono/nome)</label>
+    <input type="text" id="input-repo" autocomplete="off" spellcheck="false" placeholder="utilizador/plantas-tracker">
+    <div class="settings-actions">
+      <button type="button" class="btn-primary" id="btn-guardar-token">Guardar</button>
+      <button type="button" class="btn-ghost" id="btn-remover-token">Remover token</button>
+    </div>
+    <p class="settings-status" id="settings-status"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

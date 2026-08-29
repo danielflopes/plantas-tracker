@@ -1,0 +1,16 @@
+{
+  "name": "Plantas Tracker",
+  "short_name": "Plantas",
+  "description": "Regas das plantas de casa, num relance.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F6F1E3",
+  "theme_color": "#24422C",
+  "lang": "pt-PT",
+  "icons": [
+    { "src": "icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icone.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

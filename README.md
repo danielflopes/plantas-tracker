@@ -55,7 +55,7 @@ O token fica guardado só no `localStorage` do teu navegador — nunca é enviad
 
 ## Site
 
-_(preencher com o URL do GitHub Pages depois do primeiro deploy)_
+**https://danielflopes.github.io/plantas-tracker/**
 
 ## Ficheiros
 

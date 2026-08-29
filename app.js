@@ -73,6 +73,15 @@
     return html + '</div>';
   }
 
+  function qtyBadge(planta){
+    if(!planta.quantidade || planta.quantidade <= 1) return '';
+    return '<span class="qty-badge" title="Tens ' + planta.quantidade + ' vasos desta planta">×' + planta.quantidade + '</span>';
+  }
+  function qtyNote(planta){
+    if(!planta.quantidade || planta.quantidade <= 1) return '';
+    return '<p class="qty-note">Tens <strong>' + planta.quantidade + ' vasos</strong> desta planta — confirma que regaste todos.</p>';
+  }
+
   function buildCard(planta){
     var card = document.createElement('div');
     card.className = 'card plant-item';
@@ -86,11 +95,12 @@
         '<div class="photo-fallback" hidden>' + initial + '</div>' +
       '</div>' +
       '<div class="card-body">' +
-        '<h2 class="plant-name">' + escapeHtml(planta.nomeComum) + '</h2>' +
+        '<h2 class="plant-name">' + escapeHtml(planta.nomeComum) + qtyBadge(planta) + '</h2>' +
         '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
         '<div class="row"><span class="label">Luz</span>' + gaugeLuz(planta.luz) + '</div>' +
         '<div class="row"><span class="label">Água</span>' + gaugeAgua(planta.agua) + '</div>' +
         '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
+        qtyNote(planta) +
         '<details class="details">' +
           '<summary>+ mais detalhes</summary>' +
           '<div class="details-body">' +
@@ -165,7 +175,7 @@
             '<span class="photo-fallback" hidden>' + initial + '</span>' +
           '</span>' +
           '<span class="lr-num">' + planta.id + '</span>' +
-          '<span class="lr-name">' + escapeHtml(planta.nomeComum) + '</span>' +
+          '<span class="lr-name">' + escapeHtml(planta.nomeComum) + qtyBadge(planta) + '</span>' +
         '</button>' +
         '<div class="lr-gauges">' + gaugeLuz(planta.luz) + gaugeAgua(planta.agua) + '</div>' +
         '<div class="lr-status">' +
@@ -187,6 +197,7 @@
             '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
             '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
+            qtyNote(planta) +
             '<details class="fix-date">' +
               '<summary>outra data</summary>' +
               '<div class="fix-date-row">' +
@@ -537,6 +548,8 @@
       loadRegas()
     ]).then(function(results){
       plantas = results[0].plantas;
+      var eyebrow = document.getElementById('eyebrow');
+      if(eyebrow) eyebrow.textContent = 'Coleção pessoal · ' + plantas.length + ' espécies';
       var loaded = results[1];
       if(isPending()){
         regas = mergeRegas(readLocalCache(), loaded);

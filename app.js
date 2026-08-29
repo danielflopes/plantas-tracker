@@ -6,13 +6,11 @@
   var LS_REGAS = 'pt_regas_cache';
   var LS_PENDING = 'pt_pending_sync';
   var LS_SORT = 'pt_sort';
-  var LS_VIEW = 'pt_view';
 
   var plantas = [];
   var regas = {};
   var sha = null;
   var sortMode = 'urgencia';
-  var viewMode = 'cards';
 
   // ---------- utilidades de data ----------
   function pad(n){ return String(n).padStart(2, '0'); }
@@ -29,14 +27,24 @@
   }
 
   // ---------- urgência ----------
+  function getRegaEntry(id){
+    var v = regas[id];
+    if(v == null) return { data: null, intervaloDias: null, limiteDias: null };
+    if(typeof v === 'string') return { data: v, intervaloDias: null, limiteDias: null };
+    return { data: v.data || null, intervaloDias: v.intervaloDias || null, limiteDias: v.limiteDias || null };
+  }
+
   function computeUrgency(planta){
-    var dateStr = regas[planta.id];
-    if(!dateStr){
-      return { registrado: false };
+    var entry = getRegaEntry(planta.id);
+    var intervaloDias = entry.intervaloDias || planta.intervaloDias;
+    var limiteDias = entry.limiteDias || planta.limiteDias;
+    var ajustado = !!entry.intervaloDias;
+    if(!entry.data){
+      return { registrado: false, intervaloDias: intervaloDias, limiteDias: limiteDias, ajustado: ajustado };
     }
-    var dias = Math.max(0, daysSince(dateStr));
-    var threshold = planta.intervaloDias / planta.limiteDias;
-    var pRaw = dias / planta.limiteDias;
+    var dias = Math.max(0, daysSince(entry.data));
+    var threshold = intervaloDias / limiteDias;
+    var pRaw = dias / limiteDias;
     var p = Math.min(1, Math.max(0, pRaw));
     var hue;
     if(p <= threshold){
@@ -46,21 +54,41 @@
       hue = 45 + (0 - 45) * ((p - threshold) / denom);
     }
     var cor = 'hsl(' + hue.toFixed(1) + ', 62%, 42%)';
-    var urgente = dias >= planta.limiteDias;
+    var urgente = dias >= limiteDias;
     var texto;
     if(dias === 0) texto = 'hoje';
     else if(dias === 1) texto = 'há 1 dia';
     else texto = 'há ' + dias + ' dias';
     if(urgente) texto += ' — regar!';
 
-    var diasAte = planta.intervaloDias - dias;
+    var diasAte = intervaloDias - dias;
     var textoProxima;
     if(diasAte > 1) textoProxima = 'em ' + diasAte + ' dias';
     else if(diasAte === 1) textoProxima = 'amanhã';
     else if(diasAte === 0) textoProxima = 'hoje';
     else textoProxima = 'atrasada ' + (diasAte === -1 ? '1 dia' : Math.abs(diasAte) + ' dias');
 
-    return { registrado: true, dias: dias, p: p, threshold: threshold, cor: cor, urgente: urgente, texto: texto, textoProxima: textoProxima, dateStr: dateStr };
+    return {
+      registrado: true, dias: dias, p: p, threshold: threshold, cor: cor, urgente: urgente,
+      texto: texto, textoProxima: textoProxima, dateStr: entry.data,
+      intervaloDias: intervaloDias, limiteDias: limiteDias, ajustado: ajustado
+    };
+  }
+
+  function adjustInterval(id, factor){
+    var planta = plantas.filter(function(p){ return p.id === id; })[0];
+    if(!planta) return null;
+    var entry = getRegaEntry(id);
+    var baseIntervalo = entry.intervaloDias || planta.intervaloDias;
+    var baseLimite = entry.limiteDias || planta.limiteDias;
+    var novoIntervalo = Math.max(1, Math.min(90, Math.round(baseIntervalo * factor)));
+    var novoLimite = Math.max(novoIntervalo + 1, Math.min(120, Math.round(baseLimite * factor)));
+    regas[id] = { data: entry.data, intervaloDias: novoIntervalo, limiteDias: novoLimite };
+    var item = document.querySelector('.plant-item[data-id="' + id + '"]');
+    if(item) applyUrgency(item, planta);
+    updateSummary();
+    syncSave();
+    return novoIntervalo;
   }
 
   function formatDatePt(dateStr){
@@ -94,83 +122,6 @@
   function qtyNote(planta){
     if(!planta.quantidade || planta.quantidade <= 1) return '';
     return '<p class="qty-note">Tens <strong>' + planta.quantidade + ' vasos</strong> desta planta — confirma que regaste todos.</p>';
-  }
-
-  function buildCard(planta){
-    var card = document.createElement('div');
-    card.className = 'card plant-item';
-    card.dataset.id = planta.id;
-    var initial = (planta.nomeComum || '?').trim().charAt(0).toUpperCase();
-
-    card.innerHTML =
-      '<div class="num">' + planta.id + '</div>' +
-      '<div class="photo-box">' +
-        '<img src="' + planta.foto + '" alt="' + escapeHtml(planta.nomeComum) + '" loading="lazy">' +
-        '<div class="photo-fallback" hidden>' + initial + '</div>' +
-      '</div>' +
-      '<div class="card-body">' +
-        '<h2 class="plant-name">' + escapeHtml(planta.nomeComum) + qtyBadge(planta) + '</h2>' +
-        '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
-        '<div class="row"><span class="label">Luz</span>' + gaugeLuz(planta.luz) + '</div>' +
-        '<div class="row"><span class="label">Água</span>' + gaugeAgua(planta.agua) + '</div>' +
-        '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
-        qtyNote(planta) +
-        '<details class="details">' +
-          '<summary>+ mais detalhes</summary>' +
-          '<div class="details-body">' +
-            '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
-            '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
-          '</div>' +
-        '</details>' +
-        '<div class="urgency">' +
-          '<div class="urgency-track"><div class="urgency-fill"></div></div>' +
-          '<p class="urgency-text"></p>' +
-        '</div>' +
-        '<button type="button" class="water-btn" aria-label="Marcar ' + escapeHtml(planta.nomeComum) + ' como regada hoje">' +
-          '<span class="check" aria-hidden="true">✓</span><span class="label-txt">Reguei hoje</span>' +
-        '</button>' +
-        '<details class="fix-date">' +
-          '<summary>outra data</summary>' +
-          '<div class="fix-date-row">' +
-            '<input type="date" aria-label="Escolher outra data de rega">' +
-            '<button type="button" class="btn-confirm-date">OK</button>' +
-          '</div>' +
-        '</details>' +
-      '</div>';
-
-    var img = card.querySelector('.photo-box img');
-    var fallback = card.querySelector('.photo-fallback');
-    img.addEventListener('error', function(){
-      img.hidden = true;
-      fallback.hidden = false;
-    }, { once: true });
-
-    var details = card.querySelector('.details');
-    var detailsSummary = details.querySelector('summary');
-    details.addEventListener('toggle', function(){
-      detailsSummary.textContent = details.open ? '− menos detalhes' : '+ mais detalhes';
-    });
-
-    var dateInput = card.querySelector('input[type=date]');
-    dateInput.max = todayISO();
-
-    var waterBtn = card.querySelector('.water-btn');
-    waterBtn.addEventListener('click', function(){
-      markWatered(planta.id, todayISO());
-      pulseButton(waterBtn);
-    });
-
-    var fixDate = card.querySelector('.fix-date');
-    card.querySelector('.btn-confirm-date').addEventListener('click', function(){
-      var val = dateInput.value;
-      if(!val) return;
-      if(val > todayISO()) val = todayISO();
-      markWatered(planta.id, val);
-      fixDate.removeAttribute('open');
-    });
-
-    applyUrgency(card, planta);
-    return card;
   }
 
   function buildListRow(planta){
@@ -213,6 +164,12 @@
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
             '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
             qtyNote(planta) +
+            '<div class="rega-adjust">' +
+              '<p class="rega-adjust-info">Regar a cada <strong class="rega-adjust-days"></strong> dias.</p>' +
+              '<button type="button" class="adjust-btn" data-factor="1.2">Adiar rega: terra ainda muito húmida</button>' +
+              '<button type="button" class="adjust-btn" data-factor="0.8">Adiantar rega: terra muito seca</button>' +
+              '<p class="adjust-status" aria-live="polite"></p>' +
+            '</div>' +
             '<details class="fix-date">' +
               '<summary>outra data</summary>' +
               '<div class="fix-date-row">' +
@@ -260,6 +217,15 @@
       fixDate.removeAttribute('open');
     });
 
+    var adjustStatus = row.querySelector('.adjust-status');
+    row.querySelectorAll('.adjust-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var factor = parseFloat(btn.dataset.factor);
+        var novo = adjustInterval(planta.id, factor);
+        if(adjustStatus && novo != null) adjustStatus.textContent = 'Ajustado — agora a cada ' + novo + ' dias.';
+      });
+    });
+
     applyUrgency(row, planta);
     return row;
   }
@@ -269,8 +235,9 @@
     var fill = card.querySelector('.urgency-fill');
     var text = card.querySelector('.urgency-text');
     var dateInput = card.querySelector('input[type=date]');
-    var compact = card.classList.contains('list-row');
     var lastRega = card.querySelector('.lr-last-rega');
+    var intervalInfo = card.querySelector('.rega-adjust-days');
+    if(intervalInfo) intervalInfo.textContent = u.intervaloDias;
     if(!u.registrado){
       fill.className = 'urgency-fill neutral';
       fill.style.width = '100%';
@@ -282,7 +249,7 @@
       fill.className = 'urgency-fill';
       fill.style.width = (u.p * 100).toFixed(0) + '%';
       fill.style.background = u.cor;
-      text.textContent = compact ? u.textoProxima : u.texto;
+      text.textContent = u.textoProxima;
       text.classList.toggle('urgent', u.urgente);
       dateInput.value = u.dateStr;
       if(lastRega){
@@ -298,7 +265,12 @@
   }
 
   function markWatered(id, dateStr){
-    regas[id] = dateStr;
+    var existing = regas[id];
+    if(existing && typeof existing === 'object'){
+      regas[id] = Object.assign({}, existing, { data: dateStr });
+    } else {
+      regas[id] = dateStr;
+    }
     var item = document.querySelector('.plant-item[data-id="' + id + '"]');
     var planta = plantas.filter(function(p){ return p.id === id; })[0];
     if(item && planta) applyUrgency(item, planta);
@@ -341,9 +313,7 @@
   function render(){
     var grid = document.getElementById('grid');
     grid.innerHTML = '';
-    grid.classList.toggle('list-view', viewMode === 'list');
-    var builder = viewMode === 'list' ? buildListRow : buildCard;
-    sortedPlantas().forEach(function(pl){ grid.appendChild(builder(pl)); });
+    sortedPlantas().forEach(function(pl){ grid.appendChild(buildListRow(pl)); });
     updateSummary();
   }
 
@@ -355,21 +325,6 @@
       b.addEventListener('click', function(){
         sortMode = b.dataset.sort;
         localStorage.setItem(LS_SORT, sortMode);
-        buttons.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-        render();
-      });
-    });
-  }
-
-  function initViewToggle(){
-    var buttons = document.querySelectorAll('.view-btn');
-    viewMode = localStorage.getItem(LS_VIEW) || 'list';
-    buttons.forEach(function(b){
-      b.setAttribute('aria-pressed', b.dataset.view === viewMode ? 'true' : 'false');
-      b.addEventListener('click', function(){
-        if(b.dataset.view === viewMode) return;
-        viewMode = b.dataset.view;
-        localStorage.setItem(LS_VIEW, viewMode);
         buttons.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
         render();
       });
@@ -402,11 +357,16 @@
   function setPending(v){ localStorage.setItem(LS_PENDING, v ? '1' : '0'); }
   function isPending(){ return localStorage.getItem(LS_PENDING) === '1'; }
 
+  function regaDate(v){
+    if(v == null) return null;
+    return typeof v === 'string' ? v : (v.data || null);
+  }
   function mergeRegas(local, remote){
     var merged = Object.assign({}, remote);
     Object.keys(local).forEach(function(id){
       var l = local[id], r = remote[id];
-      merged[id] = (!r || l > r) ? l : r;
+      var ld = regaDate(l), rd = regaDate(r);
+      merged[id] = (!rd || (ld && ld >= rd)) ? l : r;
     });
     return merged;
   }
@@ -562,7 +522,6 @@
   // ---------- arranque ----------
   function init(){
     initSortbar();
-    initViewToggle();
     initSettings();
 
     Promise.all([

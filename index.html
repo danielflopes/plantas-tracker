@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=7">
+<link rel="stylesheet" href="estilo.css?v=8">
 </head>
 <body>
 <div class="wrap">
@@ -24,23 +24,6 @@
         <h1>Plantas Tracker</h1>
       </div>
       <div class="top-actions">
-        <div class="view-toggle" role="group" aria-label="Tipo de vista">
-          <button type="button" class="view-btn" id="btn-vista-cartoes" data-view="cards" aria-pressed="false" aria-label="Vista em cartões">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="8" height="8" rx="1.5"></rect>
-              <rect x="13" y="3" width="8" height="8" rx="1.5"></rect>
-              <rect x="3" y="13" width="8" height="8" rx="1.5"></rect>
-              <rect x="13" y="13" width="8" height="8" rx="1.5"></rect>
-            </svg>
-          </button>
-          <button type="button" class="view-btn" id="btn-vista-lista" data-view="list" aria-pressed="true" aria-label="Vista em lista">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="4" y1="6" x2="20" y2="6"></line>
-              <line x1="4" y1="12" x2="20" y2="12"></line>
-              <line x1="4" y1="18" x2="20" y2="18"></line>
-            </svg>
-          </button>
-        </div>
         <button type="button" class="gear-btn" id="btn-definicoes" aria-label="Definições">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
@@ -66,7 +49,7 @@
     </div>
   </header>
 
-  <main class="grid list-view" id="grid" aria-live="polite"></main>
+  <main class="grid" id="grid" aria-live="polite"></main>
 
   <footer>
     Plantas Tracker · dados guardados em <code>regas.json</code> neste repositório
@@ -91,6 +74,6 @@
   </div>
 </div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>

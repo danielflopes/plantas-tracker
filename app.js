@@ -70,7 +70,7 @@
 
     return {
       registrado: true, dias: dias, p: p, threshold: threshold, cor: cor, urgente: urgente,
-      texto: texto, textoProxima: textoProxima, dateStr: entry.data,
+      texto: texto, textoProxima: textoProxima, diasAte: diasAte, dateStr: entry.data,
       intervaloDias: intervaloDias, limiteDias: limiteDias, ajustado: ajustado
     };
   }
@@ -302,9 +302,9 @@
       if(sortMode === 'luz') return (b.luz - a.luz) || (parseInt(a.id, 10) - parseInt(b.id, 10));
       if(sortMode === 'agua') return (b.agua - a.agua) || (parseInt(a.id, 10) - parseInt(b.id, 10));
       var ua = computeUrgency(a), ub = computeUrgency(b);
-      var pa = ua.registrado ? ua.p : 1.0001;
-      var pb = ub.registrado ? ub.p : 1.0001;
-      if(pb !== pa) return pb - pa;
+      var da = ua.registrado ? ua.diasAte : -Infinity;
+      var db = ub.registrado ? ub.diasAte : -Infinity;
+      if(da !== db) return da - db;
       return parseInt(a.id, 10) - parseInt(b.id, 10);
     });
     return list;

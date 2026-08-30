@@ -50,7 +50,9 @@ O token fica guardado só no `localStorage` do teu navegador — nunca é enviad
 - `limiteDias`: ponto de rega urgente (barra fica vermelha)
 - `verificar` e `cedoDemais`: o teste concreto a fazer antes de regar esta espécie — aparecem no bloco destacado dos detalhes. O calendário é só uma estimativa; estes dois campos é que decidem. Ambos são opcionais: sem eles o bloco simplesmente não aparece.
 
-3. Faz commit e push. Não é preciso mexer no `regas.json` — a planta nova aparece com "sem registo" até seres regada pela primeira vez.
+3. Acrescenta a ficha em [`dados/guia-plantas.md`](dados/guia-plantas.md) — o guia é a versão longa dos mesmos
+   dados (tabela resumo, notas e histórico por planta) e deve ficar em sincronia com o `plantas.json`.
+4. Faz commit e push. Não é preciso mexer no `regas.json` — a planta nova aparece com "sem registo" até seres regada pela primeira vez.
 
 ## Fotos em falta
 

@@ -1,6 +1,6 @@
 {
-  "atualizado": "2026-08-29",
-  "notas": "luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias = rega ideal | limiteDias = ponto vermelho (urgente)",
+  "atualizado": "2026-08-30",
+  "notas": "luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias = rega ideal | limiteDias = ponto vermelho (urgente) | verificar = como confirmar que ja precisa de agua | cedoDemais = sinais de que ainda e cedo",
   "plantas": [
     {
       "id": "01",
@@ -12,6 +12,8 @@
       "luzTexto": "Muita — luz indireta abundante, evitar sol direto nas horas de calor",
       "agua": 3,
       "aguaTexto": "Moderada — solo ligeiramente húmido, nunca encharcado",
+      "verificar": "Enfia o dedo 3–4 cm no substrato: se a essa profundidade sair seco e solto, rega até escorrer pelos furos. Reage depressa — uma folha caída sobre terra seca é sede a sério.",
+      "cedoDemais": "Se a terra ainda cola ao dedo aos 3 cm, espera. Atenção: folha caída com terra húmida não é sede — é raiz sem oxigénio; aí a solução é deixar secar, não regar.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "É normal perder as folhas mais baixas. Contém oxalato de cálcio: tóxica para os gatos."
@@ -26,6 +28,8 @@
       "luzTexto": "Pouca — tolera sombra e luz artificial",
       "agua": 1,
       "aguaTexto": "Muito pouca — só quando o solo está totalmente seco",
+      "verificar": "O substrato tem de estar seco de cima a baixo: espeta um pau de espetada até ao fundo do vaso — se sair limpo e seco, pode regar. Hastes a enrugar ou a ficar moles na ponta confirmam a sede.",
+      "cedoDemais": "Qualquer vestígio de humidade no fundo, ou vaso ainda pesado ao levantar, quer dizer cedo demais. Na dúvida espera mais uma semana: aguenta bem a seca, não aguenta o excesso.",
       "intervaloDias": 21,
       "limiteDias": 32,
       "dica": "Tira o elástico decorativo do topo para as hastes não ficarem estranguladas. Pontas secas são normais."
@@ -40,6 +44,8 @@
       "luzTexto": "Pouca — tolera pouca luz e luz artificial",
       "agua": 1,
       "aguaTexto": "Muito pouca — deixa secar por completo entre regas",
+      "verificar": "Seca total é o critério. Dedo 5 cm dentro do substrato: sem frescura nenhuma, rega. Pecíolos a enrugar ligeiramente são o aviso normal de sede.",
+      "cedoDemais": "Terra fresca a 5 cm, ou vaso pesado ao levantar, = ainda é cedo. Os rizomas guardam água para semanas; regar antes do tempo é o que mata a planta.",
       "intervaloDias": 21,
       "limiteDias": 35,
       "dica": "Guarda água nos rizomas. O excesso de rega é a principal causa de morte. Limpa as folhas com pano húmido."
@@ -53,6 +59,8 @@
       "luzTexto": "Média — boa luminosidade indireta para enraizar",
       "agua": 4,
       "aguaTexto": "Muita — trocar a água a cada 5–7 dias",
+      "verificar": "Não há terra para testar — avalia a água: troca-a quando o nível baixa, fica turva ou ganha cheiro, tipicamente a cada 5–7 dias. Enxagua as raízes ao trocar.",
+      "cedoDemais": "Água limpa, transparente e a cobrir o nó = está tudo bem, não mexas. Ao completar, enche só até ao nível do nó: pecíolo submerso apodrece.",
       "intervaloDias": 6,
       "limiteDias": 10,
       "dica": "Mantém um nó submerso, sem cobrir o pecíolo. Raízes com 5–8 cm: transplanta para vaso bem drenante."
@@ -66,6 +74,8 @@
       "luzTexto": "Média — luz indireta filtrada, sol direto queima",
       "agua": 3,
       "aguaTexto": "Moderada — regar quando o topo seca",
+      "verificar": "Dedo 2–3 cm: seco a essa profundidade, rega até escorrer pelos furos e esvazia o prato. Gosta de ligeiramente húmida de forma consistente.",
+      "cedoDemais": "Superfície seca mas ainda fresco aos 2 cm = espera. Pontas castanhas são ar seco, não sede — borrifa em vez de adiantar a rega.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "Pontas castanhas indicam ar seco. Apara-as com tesoura limpa junto ao caule."
@@ -80,6 +90,8 @@
       "luzTexto": "Muita — direta ou indireta muito forte",
       "agua": 3,
       "aguaTexto": "Moderada — quando os primeiros cm do substrato secam",
+      "verificar": "É vaso grande: dedo 4–5 cm. Tira um pouco de terra dessa profundidade e aperta entre os dedos — se pingar água ou fizer bola compacta, ainda está molhada; se esfarelar, rega.",
+      "cedoDemais": "Terra que se agrega em bola húmida ao apertar = cedo demais. Folhas caídas com o substrato molhado são raiz asfixiada, não falta de água.",
       "intervaloDias": 8,
       "limiteDias": 14,
       "dica": "As folhas rasgam naturalmente — é normal, não é doença. Limpa as folhas com pano húmido."
@@ -93,6 +105,8 @@
       "luzTexto": "Média — indireta moderada a brilhante, tolera sombra",
       "agua": 3,
       "aguaTexto": "Moderada — quando o topo do solo seca",
+      "verificar": "Dedo 2–3 cm: seco, rega bem. Folhas a ficar finas, baças e sem rigidez confirmam a sede.",
+      "cedoDemais": "Ainda fresco aos 2 cm, espera. Folhas amarelas com terra húmida são excesso de água — deixa secar mais antes da próxima rega.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "Ar seco atrai ácaros — borrifa as folhas de vez em quando. Poda as hastes compridas para adensar."
@@ -107,6 +121,8 @@
       "luzTexto": "Média — indireta moderada a brilhante",
       "agua": 2,
       "aguaTexto": "Pouca — deixa secar metade do substrato",
+      "verificar": "Tem de secar metade do vaso: dedo até ao segundo nó (~5 cm) ou pau de espetada a meia altura — sai seco, rega. Usa água filtrada ou repousada 24 h.",
+      "cedoDemais": "Humidade a meia altura = ainda é cedo, mesmo com a superfície a parecer seca. Pontas castanhas são cloro/flúor da água, não sede: não adiantes a rega por causa disso.",
       "intervaloDias": 12,
       "limiteDias": 20,
       "dica": "Sensível ao cloro da água da torneira. Usa água filtrada ou repousada 24h."
@@ -120,6 +136,8 @@
       "luzTexto": "Muita — indireta abundante, para desenvolver as fenestrações",
       "agua": 2,
       "aguaTexto": "Pouca — deixa secar quase por completo entre regas",
+      "verificar": "Deixa secar metade a três quartos do vaso. Pau de espetada até meio ou dedo 5 cm: seco, rega abundantemente até escorrer.",
+      "cedoDemais": "Terra fresca aos 5 cm = espera. Gotas nas pontas das folhas de manhã (gutação) são sinal de água a mais, não a menos.",
       "intervaloDias": 12,
       "limiteDias": 20,
       "dica": "Beneficia de um tutor (bastão de musgo). Tolera melhor a falta de água do que o excesso."
@@ -134,6 +152,8 @@
       "luzTexto": "Média — indireta brilhante a moderada",
       "agua": 2,
       "aguaTexto": "Pouca — deixa secar quase por completo, muito sensível a excesso",
+      "verificar": "Deixa secar 50–75 % do vaso: pau de espetada até meio — sai limpo e seco, rega. Água filtrada ou repousada 24 h.",
+      "cedoDemais": "Qualquer frescura a meia altura = cedo demais. É das que mais facilmente apodrece por rega antecipada — na dúvida, espera.",
       "intervaloDias": 14,
       "limiteDias": 22,
       "dica": "Sensível a sais/cloro — deixa a água repousar. Boa luz mantém a cor avermelhada das bordas."
@@ -147,6 +167,8 @@
       "luzTexto": "Média — tolera pouca luz, mas floresce mais com luz indireta brilhante",
       "agua": 3,
       "aguaTexto": "Moderada — regar quando as folhas começam a murchar ligeiramente",
+      "verificar": "Dedo 2–3 cm: seco, rega até escorrer e esvazia o prato. Avisa murchando de forma dramática e recupera em poucas horas, mas não uses isso como método: murchar sempre stressa e queima as pontas.",
+      "cedoDemais": "Húmido aos 2 cm = espera. Se murchou com a terra encharcada, o problema é raiz apodrecida: deixa secar, não regues.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "As folhas murcham visivelmente quando tem sede e recuperam pouco depois de regar — é o melhor aviso. Sensível ao cloro/flúor da torneira. Tóxica para gatos e cães."
@@ -160,6 +182,8 @@
       "luzTexto": "Muita — luz indireta abundante, evitar sol direto",
       "agua": 3,
       "aguaTexto": "Moderada — solo ligeiramente húmido, nunca encharcado",
+      "verificar": "Dedo 3–4 cm: seco a essa profundidade, rega até escorrer. Como a Portodora, reage em poucas horas — folha descaída sobre terra seca é sede.",
+      "cedoDemais": "Terra a colar ao dedo aos 3 cm = espera. No inverno abranda muito e pode passar 2–3 semanas sem precisar: segue o dedo, não o calendário.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "Distingue-se da Portodora pelas margens lisas e pecíolo verde uniforme. Também tóxica para os gatos."
@@ -173,6 +197,8 @@
       "luzTexto": "Média — luz indireta brilhante, sol direto queima as folhas",
       "agua": 2,
       "aguaTexto": "Pouca — 1x por semana: mergulhar o vaso interior 10–15 min e escorrer bem",
+      "verificar": "Olha as raízes através do vaso transparente: prateadas ou esbranquiçadas = pede água. O vaso levantado também se sente leve. Mergulha o vaso interior 10–15 min e escorre bem.",
+      "cedoDemais": "Raízes verdes vivas ou casca escura e húmida = ainda é cedo. Raízes que ficam prateadas e engelhadas mesmo depois de regar já estão mortas — não são sinal de sede.",
       "intervaloDias": 7,
       "limiteDias": 12,
       "dica": "Raízes verdes = com água; prateadas = a pedir rega. Nunca deixar água no fundo do cachepô nem no centro da roseta."
@@ -186,6 +212,8 @@
       "luzTexto": "Muita — luz indireta brilhante, tolera alguma sombra",
       "agua": 3,
       "aguaTexto": "Moderada — quando os primeiros cm do substrato secam, drenar bem",
+      "verificar": "Afasta as pedras decorativas para tocar na terra e enfia o dedo 4–5 cm: seco, rega até escorrer e esvazia o prato 15 min depois.",
+      "cedoDemais": "Terra húmida por baixo das pedras = cedo demais, mesmo com a superfície seca. Folhas amarelas e base do caule mole são excesso de água.",
       "intervaloDias": 10,
       "limiteDias": 16,
       "dica": "Muito sensível a excesso de rega — a raiz apodrece com facilidade. Confirma que as pedras decorativas não travam a drenagem. O caule entrançado é decorativo, não é a forma natural da planta."
@@ -199,9 +227,26 @@
       "luzTexto": "Média — luz indireta brilhante, sem sol direto que queima as frondes delicadas",
       "agua": 3,
       "aguaTexto": "Moderada — solo sempre ligeiramente húmido; os rizomas peludos toleram alguma seca entre regas",
+      "verificar": "Dedo 2 cm, ou levanta o vaso: leve = seco, rega. Os rizomas peludos são reserva e dão alguma margem, mas não deixes secar por completo.",
+      "cedoDemais": "Substrato ainda escuro e fresco à superfície = espera. Frondes a estalar e a acastanhar nas pontas são falta de humidade no ar — borrifa, não adiantes a rega.",
       "intervaloDias": 6,
       "limiteDias": 10,
       "dica": "Gosta de humidade no ar — borrifa as frondes de vez em quando. Os rizomas peludos ('pés-de-coelho') que saem do vaso são normais, não os cortes."
+    },
+    {
+      "id": "16",
+      "nomeComum": "Jibóia",
+      "nomeCientifico": "Epipremnum aureum",
+      "foto": "fotos/16-jiboia.jpg",
+      "luz": 2,
+      "luzTexto": "Média — luz indireta brilhante; tolera pouca luz, mas perde a variação amarela das folhas",
+      "agua": 2,
+      "aguaTexto": "Pouca — deixa secar os primeiros 3–5 cm do substrato entre regas",
+      "verificar": "Dedo 3–5 cm: seco a essa profundidade, rega até escorrer pelos furos. As folhas amolecem e descaem ligeiramente quando tem sede e recuperam em poucas horas depois de regar.",
+      "cedoDemais": "Se o dedo sai com terra agarrada, ainda é cedo. Folhas amarelas com o substrato sempre húmido são excesso de água, não falta — aí espaça as regas.",
+      "intervaloDias": 9,
+      "limiteDias": 15,
+      "dica": "Trepadeira resistente: podar as hastes compridas acima de um nó adensa a planta, e as pontas cortadas enraízam em água. Contém oxalato de cálcio: tóxica para gatos e cães."
     }
   ]
 }

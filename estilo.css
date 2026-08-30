@@ -138,6 +138,24 @@ h1{
 
 .tip{font-size:13.5px;line-height:1.5;color:var(--muted);margin:8px 0 0;}
 
+/* ---------- quando regar: como verificar ---------- */
+.check-block{
+  margin:12px 0 0;padding:10px 12px;
+  border-radius:10px;border:1px solid var(--line);
+  background:rgba(94,127,83,0.10);
+}
+.check-block p{
+  font-size:13px;line-height:1.55;color:var(--muted);
+  margin:0;padding-left:20px;position:relative;
+}
+.check-block p + p{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line);}
+.check-block strong{color:var(--forest);font-weight:700;}
+.check-block p::before{
+  position:absolute;left:0;top:0;font-size:13px;line-height:1.55;
+}
+.check-go::before{content:"💧";}
+.check-wait::before{content:"✋";}
+
 .qty-badge{
   display:inline-block;vertical-align:middle;margin-left:7px;
   font-family:'Work Sans',sans-serif;font-size:11.5px;font-weight:600;

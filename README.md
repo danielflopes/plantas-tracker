@@ -36,6 +36,8 @@ O token fica guardado só no `localStorage` do teu navegador — nunca é enviad
   "luzTexto": "Descrição da necessidade de luz",
   "agua": 3,
   "aguaTexto": "Descrição da necessidade de água",
+  "verificar": "Como confirmar que já precisa de água (teste do dedo, peso do vaso, cor das raízes…)",
+  "cedoDemais": "O que indica que ainda é cedo, e o falso alarme típico desta planta",
   "intervaloDias": 7,
   "limiteDias": 12,
   "dica": "Uma dica curta e útil."
@@ -46,12 +48,15 @@ O token fica guardado só no `localStorage` do teu navegador — nunca é enviad
 - `agua`: 1 = muito pouca · 2 = pouca · 3 = moderada · 4 = muita
 - `intervaloDias`: regas ideais (fim da barra verde)
 - `limiteDias`: ponto de rega urgente (barra fica vermelha)
+- `verificar` e `cedoDemais`: o teste concreto a fazer antes de regar esta espécie — aparecem no bloco destacado dos detalhes. O calendário é só uma estimativa; estes dois campos é que decidem. Ambos são opcionais: sem eles o bloco simplesmente não aparece.
 
 3. Faz commit e push. Não é preciso mexer no `regas.json` — a planta nova aparece com "sem registo" até seres regada pela primeira vez.
 
 ## Fotos em falta
 
-Todas as 15 plantas têm foto. Se adicionares uma planta nova sem foto ainda, o site mostra um placeholder (fundo verde com a inicial do nome) em vez de quebrar, até a foto ser adicionada.
+Falta a foto da **Jibóia (16)** — põe o ficheiro em `fotos/16-jiboia.jpg` (~800px de largura) e fica logo a aparecer, sem mexer em mais nada. As outras 15 plantas têm foto.
+
+Enquanto uma foto falta, o site mostra um placeholder (fundo verde com a inicial do nome) em vez de quebrar.
 
 ## Site
 

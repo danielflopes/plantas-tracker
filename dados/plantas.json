@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-08-30",
+  "atualizado": "2026-08-31",
   "notas": "luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias = rega ideal | limiteDias = ponto vermelho (urgente) | verificar = como confirmar que ja precisa de agua | cedoDemais = sinais de que ainda e cedo",
   "plantas": [
     {
@@ -247,6 +247,21 @@
       "intervaloDias": 9,
       "limiteDias": 15,
       "dica": "Trepadeira resistente: podar as hastes compridas acima de um nó adensa a planta, e as pontas cortadas enraízam em água. Contém oxalato de cálcio: tóxica para gatos e cães."
+    },
+    {
+      "id": "17",
+      "nomeComum": "Monstera-Furada",
+      "nomeCientifico": "Monstera adansonii",
+      "foto": "fotos/17-monstera-adansonii.jpg",
+      "luz": 2,
+      "luzTexto": "Média — luz indireta brilhante; pouca luz faz perder as fenestrações nas folhas novas",
+      "agua": 3,
+      "aguaTexto": "Moderada — regar quando os primeiros 2–3 cm do substrato secam",
+      "verificar": "Dedo 2–3 cm: seco a essa profundidade, rega até escorrer pelos furos. Folhas a ficar moles e sem brilho confirmam a sede.",
+      "cedoDemais": "Se o dedo sai com terra agarrada aos 2–3 cm, ainda é cedo. Folhas amarelas com o substrato húmido são excesso de água, não falta — espaça as regas.",
+      "intervaloDias": 7,
+      "limiteDias": 12,
+      "dica": "Trepadeira — beneficia de um tutor de musgo para desenvolver folhas maiores e mais furadas. Gosta de humidade no ar. Contém oxalato de cálcio: tóxica para gatos e cães."
     }
   ]
 }

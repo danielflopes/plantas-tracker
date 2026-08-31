@@ -1,11 +1,11 @@
 ---
 tags: [plantas, casa]
-atualizado: 2026-08-30
+atualizado: 2026-08-31
 ---
 
 # 🪴 Guia de Plantas de Interior
 
-Coleção pessoal · 16 espécies. Ficha de identificação e cuidados de cada planta.
+Coleção pessoal · 17 espécies. Ficha de identificação e cuidados de cada planta.
 
 Este guia acompanha o [Plantas Tracker](https://danielflopes.github.io/plantas-tracker/) — os dados de cada ficha vêm de `dados/plantas.json`.
 
@@ -39,6 +39,7 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 | 14 | Árvore-da-Fortuna / Pachira | *Pachira aquatica* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 15 | Samambaia | *Davallia fejeensis* | 🔆🔆 Média | 💧💧💧 Moderada |
 | 16 | Jibóia | *Epipremnum aureum* | 🔆🔆 Média | 💧💧 Pouca |
+| 17 | Monstera-Furada | *Monstera adansonii* | 🔆🔆 Média | 💧💧💧 Moderada |
 
 ---
 
@@ -410,3 +411,25 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 
 **Histórico:**
 - 2026-08-30 — Adicionada à coleção.
+
+### 17. Monstera-Furada
+
+![[17-monstera-adansonii.jpg|300]]
+
+*Monstera adansonii*
+
+- **Luz:** 🔆🔆 Média
+- **Rega:** 💧💧💧 Moderada
+- Luz indireta brilhante; pouca luz faz perder as fenestrações nas folhas novas
+- Deixa secar os primeiros 2–3 cm do substrato entre regas
+
+> [!question] Como verificar antes de regar
+> **Já precisa:** Dedo 2–3 cm: seco a essa profundidade, rega até escorrer pelos furos. Folhas a ficar moles e sem brilho confirmam a sede.
+>
+> **Ainda é cedo:** Se o dedo sai com terra agarrada aos 2–3 cm, ainda é cedo. Folhas amarelas com o substrato húmido são excesso de água, não falta — espaça as regas.
+
+> [!tip] Nota
+> Trepadeira — beneficia de um tutor de musgo para desenvolver folhas maiores e mais furadas. Gosta de humidade no ar. Contém oxalato de cálcio: tóxica para gatos e cães se mastigada.
+
+**Histórico:**
+- 2026-08-31 — Adicionada à coleção.

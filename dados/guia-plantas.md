@@ -28,13 +28,13 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 | 03 | Zamioculca ×3 | *Zamioculcas zamiifolia* | 🔆 Pouca | 💧 Muito pouca |
 | 04 | Filodendro (estaca em água) | *Philodendron erubescens / domesticum 'Green Imperial'* | 🔆🔆 Média | 💧💧💧💧 Muita |
 | 05 | Palmeira-de-Sala | *Chamaedorea elegans* | 🔆🔆 Média | 💧💧💧 Moderada |
-| 06 | Estrelícia-Branca / Ave-do-Paraíso-Gigante ×2 | *Strelitzia nicolai* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
+| 06 | Estrelícia-Branca ×2 | *Strelitzia nicolai* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 07 | Hera | *Hedera helix* | 🔆🔆 Média | 💧💧💧 Moderada |
-| 08 | Pau-d'Água / Tronco-da-Felicidade ×2 | *Dracaena fragrans 'Massangeana'* | 🔆🔆 Média | 💧💧 Pouca |
+| 08 | Pau-d'Água ×2 | *Dracaena fragrans 'Massangeana'* | 🔆🔆 Média | 💧💧 Pouca |
 | 09 | Costela-de-Adão | *Monstera deliciosa* | 🔆🔆🔆 Muita | 💧💧 Pouca |
 | 10 | Dracena-de-Madagáscar ×2 | *Dracaena marginata* | 🔆🔆 Média | 💧💧 Pouca |
 | 11 | Lírio-da-Paz | *Spathiphyllum wallisii* | 🔆🔆 Média | 💧💧💧 Moderada |
-| 12 | Orelha-de-Elefante (folha lisa) | *Alocasia odora* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
+| 12 | Manto de Eva | *Alocasia odora* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 13 | Orquídea-Borboleta | *Phalaenopsis (híbrido)* | 🔆🔆 Média | 💧💧 Pouca |
 | 14 | Árvore-da-Fortuna / Pachira | *Pachira aquatica* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 15 | Samambaia | *Davallia fejeensis* | 🔆🔆 Média | 💧💧💧 Moderada |
@@ -158,7 +158,7 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 **Histórico:**
 - 
 
-### 06. Estrelícia-Branca / Ave-do-Paraíso-Gigante
+### 06. Estrelícia-Branca
 
 ![[06-strelitzia-nicolai.jpg|300]]
 
@@ -203,7 +203,7 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 **Histórico:**
 - 
 
-### 08. Pau-d'Água / Tronco-da-Felicidade
+### 08. Pau-d'Água
 
 ![[08-dracaena-fragrans-massangeana.jpg|300]]
 
@@ -295,7 +295,7 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 **Histórico:**
 - 2026-08-29 — Corrigida a identificação: era Antúrio no guia, é Lírio-da-Paz (*Spathiphyllum wallisii*).
 
-### 12. Orelha-de-Elefante (folha lisa)
+### 12. Manto de Eva
 
 ![[12-alocasia-odora.jpg|300]]
 

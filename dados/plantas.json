@@ -82,7 +82,7 @@
     },
     {
       "id": "06",
-      "nomeComum": "Estrelícia-Branca / Ave-do-Paraíso-Gigante",
+      "nomeComum": "Estrelícia-Branca",
       "nomeCientifico": "Strelitzia nicolai",
       "foto": "fotos/06-strelitzia-nicolai.jpg",
       "quantidade": 2,
@@ -113,7 +113,7 @@
     },
     {
       "id": "08",
-      "nomeComum": "Pau-d'Água / Tronco-da-Felicidade",
+      "nomeComum": "Pau-d'Água",
       "nomeCientifico": "Dracaena fragrans 'Massangeana'",
       "foto": "fotos/08-dracaena-fragrans-massangeana.jpg",
       "quantidade": 2,
@@ -175,7 +175,7 @@
     },
     {
       "id": "12",
-      "nomeComum": "Orelha-de-Elefante (folha lisa)",
+      "nomeComum": "Manto de Eva",
       "nomeCientifico": "Alocasia odora",
       "foto": "fotos/12-alocasia-odora.jpg",
       "luz": 3,

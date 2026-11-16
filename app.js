@@ -113,6 +113,12 @@
     return row;
   }
 
+  function valorMedidor(p){
+    if(p.medidor == null) return Infinity;
+    var n = parseFloat(String(p.medidor));
+    return isNaN(n) ? Infinity : n;
+  }
+
   function sortedPlantas(list){
     list = list.slice();
     list.sort(function(a, b){
@@ -120,6 +126,12 @@
       if(sortMode === 'numero') return porNumero;
       if(sortMode === 'luz') return (b.luz - a.luz) || porNumero;
       if(sortMode === 'agua') return (b.agua - a.agua) || porNumero;
+      if(sortMode === 'sensor'){
+        // menor valor do medidor primeiro; sem medidor no fim
+        var ma = valorMedidor(a), mb = valorMedidor(b);
+        if(ma !== mb) return ma - mb;
+        return a.nomeComum.localeCompare(b.nomeComum, 'pt');
+      }
       return a.nomeComum.localeCompare(b.nomeComum, 'pt');
     });
     return list;
@@ -171,7 +183,7 @@
     var saved = null;
     try { saved = localStorage.getItem(LS_SORT); } catch(e){}
     // 'urgencia' era do tempo do tracker; já não existe
-    sortMode = (saved === 'numero' || saved === 'nome' || saved === 'luz' || saved === 'agua') ? saved : 'nome';
+    sortMode = (saved === 'numero' || saved === 'nome' || saved === 'luz' || saved === 'agua' || saved === 'sensor') ? saved : 'nome';
     buttons.forEach(function(b){
       b.setAttribute('aria-pressed', b.dataset.sort === sortMode ? 'true' : 'false');
       b.addEventListener('click', function(){

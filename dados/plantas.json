@@ -58,20 +58,20 @@
     },
     {
       "id": "04",
-      "nomeComum": "Filodendro (estaca em água)",
+      "nomeComum": "Filodendro",
       "nomeCientifico": "Philodendron erubescens / domesticum 'Green Imperial'",
       "local": "interior",
       "foto": "fotos/04-philodendron-erubescens-domesticum-green-imperial.jpg",
       "luz": 2,
-      "luzTexto": "Média — boa luminosidade indireta para enraizar",
-      "agua": 4,
-      "aguaTexto": "Muita — trocar a água a cada 5–7 dias",
-      "medidorNota": "O medidor não se aplica: esta planta está numa estaca em água.",
-      "verificar": "Não há terra para testar — avalia a água: troca-a quando o nível baixa, fica turva ou ganha cheiro, tipicamente a cada 5–7 dias. Enxagua as raízes ao trocar.",
-      "cedoDemais": "Água limpa, transparente e a cobrir o nó = está tudo bem, não mexas. Ao completar, enche só até ao nível do nó: pecíolo submerso apodrece.",
+      "luzTexto": "Média — luz indireta brilhante; com pouca luz as folhas ficam mais pequenas e os caules esticam",
+      "agua": 3,
+      "aguaTexto": "Moderada — deixa secar os primeiros 3–4 cm do substrato entre regas",
+      "medidor": "4",
+      "verificar": "Dedo 3–4 cm: seco a essa profundidade, rega até escorrer pelos furos. As folhas descaem ligeiramente quando tem sede. Nas primeiras semanas depois de passar da água para a terra, mantém o substrato um pouco mais húmido: as raízes de água são frágeis.",
+      "cedoDemais": "Se o dedo sai com terra agarrada, ainda é cedo. Folhas amarelas com o substrato sempre húmido são excesso de água, não falta.",
       "intervaloDias": 6,
       "limiteDias": 10,
-      "dica": "Mantém um nó submerso, sem cobrir o pecíolo. Raízes com 5–8 cm: transplanta para vaso bem drenante."
+      "dica": "Já está em terra, por isso nunca deixes água parada no fundo do cachepô. Contém oxalato de cálcio: tóxica para gatos e cães se mastigada."
     },
     {
       "id": "05",

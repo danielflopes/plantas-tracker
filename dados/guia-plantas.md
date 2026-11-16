@@ -26,7 +26,7 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 | 01 | Orelha-de-Elefante / Alocásia ×2 | *Alocasia × portodora* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 02 | Lança-de-São-Jorge ×2 | *Sansevieria cylindrica (Dracaena angolensis)* | 🔆 Pouca | 💧 Muito pouca |
 | 03 | Zamioculca ×3 | *Zamioculcas zamiifolia* | 🔆 Pouca | 💧 Muito pouca |
-| 04 | Filodendro (estaca em água) | *Philodendron erubescens / domesticum 'Green Imperial'* | 🔆🔆 Média | 💧💧💧💧 Muita |
+| 04 | Filodendro | *Philodendron erubescens / domesticum 'Green Imperial'* | 🔆🔆 Média | 💧💧💧 Moderada |
 | 05 | Palmeira-de-Sala | *Chamaedorea elegans* | 🔆🔆 Média | 💧💧💧 Moderada |
 | 06 | Estrelícia-Branca ×2 | *Strelitzia nicolai* | 🔆🔆🔆 Muita | 💧💧💧 Moderada |
 | 07 | Hera | *Hedera helix* | 🔆🔆 Média | 💧💧💧 Moderada |
@@ -115,27 +115,28 @@ O número de dias é só uma estimativa. Antes de regar, faz o teste da ficha �
 **Histórico:**
 - 
 
-### 04. Filodendro (estaca em água)
+### 04. Filodendro
 
 ![[04-philodendron-erubescens-domesticum-green-imperial.jpg|300]]
 
 *Philodendron erubescens / domesticum 'Green Imperial'*
 
 - **Luz:** 🔆🔆 Média
-- **Rega:** 💧💧💧💧 Muita
-- Boa luminosidade indireta, para enraizar
-- Trocar a água a cada 5–7 dias
+- **Rega:** 💧💧💧 Moderada
+- Luz indireta brilhante; com pouca luz as folhas ficam mais pequenas e os caules esticam
+- Deixa secar os primeiros 3–4 cm do substrato entre regas
 
 > [!question] Como verificar antes de regar
-> **Já precisa:** Não há terra para testar — avalia a água: troca-a quando o nível baixa, fica turva ou ganha cheiro, tipicamente a cada 5–7 dias. Enxagua as raízes ao trocar.
+> **Já precisa:** Dedo 3–4 cm: seco a essa profundidade, rega até escorrer pelos furos. As folhas descaem ligeiramente quando tem sede. Nas primeiras semanas depois de passar da água para a terra, mantém o substrato um pouco mais húmido: as raízes de água são frágeis.
 >
-> **Ainda é cedo:** Água limpa, transparente e a cobrir o nó = está tudo bem, não mexas. Ao completar, enche só até ao nível do nó: pecíolo submerso apodrece.
+> **Ainda é cedo:** Se o dedo sai com terra agarrada, ainda é cedo. Folhas amarelas com o substrato sempre húmido são excesso de água, não falta.
 
 > [!tip] Nota
-> Mantém um nó submerso, sem cobrir o pecíolo. Quando as raízes atingirem 5–8 cm, transplanta para vaso com substrato bem drenante.
+> Já está em terra, por isso nunca deixes água parada no fundo do cachepô. Contém oxalato de cálcio: tóxica para gatos e cães se mastigada.
 
 **Histórico:**
 - 
+- 2026-11-16 — Passou de estaca em água para terra.
 
 ### 05. Palmeira-de-Sala
 

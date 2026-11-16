@@ -1,7 +1,7 @@
 {
-  "name": "Plantas Tracker",
+  "name": "As minhas plantas",
   "short_name": "Plantas",
-  "description": "Regas das plantas de casa, num relance.",
+  "description": "As plantas que tenho, com a luz, a água e os cuidados de cada uma.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

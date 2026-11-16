@@ -4,7 +4,7 @@
     {
       "name": "plantas-tracker",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8934", "--directory", "/Users/everythingelectric/Documents/Plantas Tracker"],
+      "runtimeArgs": ["-m", "http.server", "8934", "--directory", "/Users/everythingelectric/Agents/Plantas Tracker"],
       "port": 8934
     }
   ]

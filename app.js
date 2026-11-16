@@ -41,6 +41,18 @@
     return '<p class="qty-note">Tens <strong>' + planta.quantidade + ' vasos</strong> desta planta.</p>';
   }
 
+  function checkBlock(planta){
+    if(!planta.verificar && !planta.cedoDemais) return '';
+    var html = '<div class="check-block">';
+    if(planta.verificar){
+      html += '<p class="check-go"><strong>Já precisa de água?</strong> ' + escapeHtml(planta.verificar) + '</p>';
+    }
+    if(planta.cedoDemais){
+      html += '<p class="check-wait"><strong>Ainda é cedo se…</strong> ' + escapeHtml(planta.cedoDemais) + '</p>';
+    }
+    return html + '</div>';
+  }
+
   function buildListRow(planta){
     var row = document.createElement('div');
     row.className = 'list-row plant-item';
@@ -71,6 +83,7 @@
             '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
             '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
+            checkBlock(planta) +
             '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
             qtyNote(planta) +
           '</div>' +

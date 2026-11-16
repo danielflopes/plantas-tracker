@@ -1,6 +1,6 @@
 {
   "atualizado": "2026-11-16",
-  "notas": "local: interior | exterior. luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias e limiteDias: dados antigos de rega, já não aparecem na app (guardados) | medidor: valor (1 a 10) do medidor de humidade em que se deve regar; medidorNota: quando não se aplica",
+  "notas": "local: interior | exterior. luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias e limiteDias: dados antigos de rega, já não aparecem na app (guardados) | medidor: valor (1 a 10) do medidor de humidade em que se deve regar; medidorNota: quando não se aplica | origem e curiosidade: texto curto mostrado na ficha | verificar e cedoDemais: já não aparecem na app (guardados)",
   "plantas": [
     {
       "id": "01",
@@ -18,7 +18,9 @@
       "cedoDemais": "Se a terra ainda cola ao dedo aos 3 cm, espera. Atenção: folha caída com terra húmida não é sede — é raiz sem oxigénio; aí a solução é deixar secar, não regar.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "É normal perder as folhas mais baixas. Contém oxalato de cálcio: tóxica para os gatos."
+      "dica": "É normal perder as folhas mais baixas. Contém oxalato de cálcio: tóxica para os gatos.",
+      "origem": "Híbrido de cultivo entre duas alocásias do Sudeste Asiático (Alocasia portei e Alocasia odora).",
+      "curiosidade": "O nome junta os dos pais: Portei + Odora. É uma planta de crescimento rápido, com folhas enormes que, em condições ideais, passam de 1 metro."
     },
     {
       "id": "02",
@@ -36,7 +38,9 @@
       "cedoDemais": "Qualquer vestígio de humidade no fundo, ou vaso ainda pesado ao levantar, quer dizer cedo demais. Na dúvida espera mais uma semana: aguenta bem a seca, não aguenta o excesso.",
       "intervaloDias": 21,
       "limiteDias": 32,
-      "dica": "Tira o elástico decorativo do topo para as hastes não ficarem estranguladas. Pontas secas são normais."
+      "dica": "Tira o elástico decorativo do topo para as hastes não ficarem estranguladas. Pontas secas são normais.",
+      "origem": "Angola, no sudoeste de África.",
+      "curiosidade": "As hastes são folhas redondas e rijas, em forma de lança. Abre os poros de noite e não de dia, para perder menos água. Em 2017 passou a ser classificada como Dracaena."
     },
     {
       "id": "03",
@@ -54,7 +58,9 @@
       "cedoDemais": "Terra fresca a 5 cm, ou vaso pesado ao levantar, = ainda é cedo. Os rizomas guardam água para semanas; regar antes do tempo é o que mata a planta.",
       "intervaloDias": 21,
       "limiteDias": 35,
-      "dica": "Guarda água nos rizomas. O excesso de rega é a principal causa de morte. Limpa as folhas com pano húmido."
+      "dica": "Guarda água nos rizomas. O excesso de rega é a principal causa de morte. Limpa as folhas com pano húmido.",
+      "origem": "Leste de África, do Quénia ao nordeste da África do Sul.",
+      "curiosidade": "Quase indestrutível: os rizomas guardam água. Um único folíolo, posto em terra ou em água, pode dar uma planta nova, mas demora meses."
     },
     {
       "id": "04",
@@ -71,7 +77,9 @@
       "cedoDemais": "Se o dedo sai com terra agarrada, ainda é cedo. Folhas amarelas com o substrato sempre húmido são excesso de água, não falta.",
       "intervaloDias": 6,
       "limiteDias": 10,
-      "dica": "Já está em terra, por isso nunca deixes água parada no fundo do cachepô. Contém oxalato de cálcio: tóxica para gatos e cães se mastigada."
+      "dica": "Já está em terra, por isso nunca deixes água parada no fundo do cachepô. Contém oxalato de cálcio: tóxica para gatos e cães se mastigada.",
+      "origem": "Filodendros como este vêm das florestas da América Central e do Sul; o erubescens é originário da Colômbia.",
+      "curiosidade": "O nome vem do grego: \"philo\" (amar) e \"dendron\" (árvore), ou seja, \"amigo das árvores\", porque na natureza trepa pelos troncos. As folhas novas saem enroladas numa bainha que depois seca e cai."
     },
     {
       "id": "05",
@@ -88,7 +96,9 @@
       "cedoDemais": "Superfície seca mas ainda fresco aos 2 cm = espera. Pontas castanhas são ar seco, não sede — borrifa em vez de adiantar a rega.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "Pontas castanhas indicam ar seco. Apara-as com tesoura limpa junto ao caule."
+      "dica": "Pontas castanhas indicam ar seco. Apara-as com tesoura limpa junto ao caule.",
+      "origem": "Florestas do México e da Guatemala.",
+      "curiosidade": "É uma das palmeiras de interior mais populares desde o século XIX. Quando está feliz pode dar pequenas flores amarelas."
     },
     {
       "id": "06",
@@ -106,7 +116,9 @@
       "cedoDemais": "Terra que se agrega em bola húmida ao apertar = cedo demais. Folhas caídas com o substrato molhado são raiz asfixiada, não falta de água.",
       "intervaloDias": 8,
       "limiteDias": 14,
-      "dica": "As folhas rasgam naturalmente — é normal, não é doença. Limpa as folhas com pano húmido."
+      "dica": "As folhas rasgam naturalmente — é normal, não é doença. Limpa as folhas com pano húmido.",
+      "origem": "Costa leste da África do Sul.",
+      "curiosidade": "O nome homenageia o czar Nicolau I da Rússia. Na natureza chega a 6–10 metros de altura; em casa quase nunca floresce."
     },
     {
       "id": "07",
@@ -123,7 +135,9 @@
       "cedoDemais": "Ainda fresco aos 2 cm, espera. Folhas amarelas com terra húmida são excesso de água — deixa secar mais antes da próxima rega.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "Ar seco atrai ácaros — borrifa as folhas de vez em quando. Poda as hastes compridas para adensar."
+      "dica": "Ar seco atrai ácaros — borrifa as folhas de vez em quando. Poda as hastes compridas para adensar.",
+      "origem": "Europa, oeste da Ásia e norte de África, incluindo Portugal.",
+      "curiosidade": "Tem duas fases: a juvenil, que trepa com folhas lobadas, e a adulta, mais arbustiva, com folhas inteiras, flores e bagas. As raízes aéreas agarram-se a muros e troncos."
     },
     {
       "id": "08",
@@ -141,7 +155,9 @@
       "cedoDemais": "Humidade a meia altura = ainda é cedo, mesmo com a superfície a parecer seca. Pontas castanhas são cloro/flúor da água, não sede: não adiantes a rega por causa disso.",
       "intervaloDias": 12,
       "limiteDias": 20,
-      "dica": "Sensível ao cloro da água da torneira. Usa água filtrada ou repousada 24h."
+      "dica": "Sensível ao cloro da água da torneira. Usa água filtrada ou repousada 24h.",
+      "origem": "África tropical.",
+      "curiosidade": "O \"pau-d'água\" vende-se em troncos cortados que enraízam só com humidade. Na natureza dá flores muito perfumadas à noite (daí \"fragrans\"), mas em casa quase nunca floresce."
     },
     {
       "id": "09",
@@ -158,7 +174,9 @@
       "cedoDemais": "Terra fresca aos 5 cm = espera. Gotas nas pontas das folhas de manhã (gutação) são sinal de água a mais, não a menos.",
       "intervaloDias": 12,
       "limiteDias": 20,
-      "dica": "Beneficia de um tutor (bastão de musgo). Tolera melhor a falta de água do que o excesso."
+      "dica": "Beneficia de um tutor (bastão de musgo). Tolera melhor a falta de água do que o excesso.",
+      "origem": "Sul do México e Panamá.",
+      "curiosidade": "O \"deliciosa\" do nome vem do fruto, de sabor a ananás e banana, que só se come totalmente maduro e pode demorar cerca de um ano a amadurecer. As folhas só ganham buracos quando a planta é adulta."
     },
     {
       "id": "10",
@@ -176,7 +194,9 @@
       "cedoDemais": "Qualquer frescura a meia altura = cedo demais. É das que mais facilmente apodrece por rega antecipada — na dúvida, espera.",
       "intervaloDias": 14,
       "limiteDias": 22,
-      "dica": "Sensível a sais/cloro — deixa a água repousar. Boa luz mantém a cor avermelhada das bordas."
+      "dica": "Sensível a sais/cloro — deixa a água repousar. Boa luz mantém a cor avermelhada das bordas.",
+      "origem": "Madagáscar.",
+      "curiosidade": "Cresce devagar e o tronco vai ficando marcado pelas cicatrizes das folhas velhas. Em natureza pode passar dos 5 metros."
     },
     {
       "id": "11",
@@ -193,7 +213,9 @@
       "cedoDemais": "Húmido aos 2 cm = espera. Se murchou com a terra encharcada, o problema é raiz apodrecida: deixa secar, não regues.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "As folhas murcham visivelmente quando tem sede e recuperam pouco depois de regar — é o melhor aviso. Sensível ao cloro/flúor da torneira. Tóxica para gatos e cães."
+      "dica": "As folhas murcham visivelmente quando tem sede e recuperam pouco depois de regar — é o melhor aviso. Sensível ao cloro/flúor da torneira. Tóxica para gatos e cães.",
+      "origem": "Florestas tropicais da Colômbia e da Venezuela.",
+      "curiosidade": "A \"flor\" branca é na verdade uma folha modificada (espata) que envolve a flor verdadeira, o pequeno espigão no centro."
     },
     {
       "id": "12",
@@ -210,7 +232,9 @@
       "cedoDemais": "Terra a colar ao dedo aos 3 cm = espera. No inverno abranda muito e pode passar 2–3 semanas sem precisar: segue o dedo, não o calendário.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "Distingue-se da Portodora pelas margens lisas e pecíolo verde uniforme. Também tóxica para os gatos."
+      "dica": "Distingue-se da Portodora pelas margens lisas e pecíolo verde uniforme. Também tóxica para os gatos.",
+      "origem": "Sul e sudeste da Ásia, desde o sul da China ao Sudeste Asiático.",
+      "curiosidade": "O \"odora\" refere-se às flores, que cheiram bem, sobretudo ao fim do dia. As folhas apontam para cima, ao contrário de outras alocásias."
     },
     {
       "id": "13",
@@ -227,7 +251,9 @@
       "cedoDemais": "Raízes verdes vivas ou casca escura e húmida = ainda é cedo. Raízes que ficam prateadas e engelhadas mesmo depois de regar já estão mortas — não são sinal de sede.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "Raízes verdes = com água; prateadas = a pedir rega. Nunca deixar água no fundo do cachepô nem no centro da roseta."
+      "dica": "Raízes verdes = com água; prateadas = a pedir rega. Nunca deixar água no fundo do cachepô nem no centro da roseta.",
+      "origem": "Sudeste Asiático e norte da Austrália.",
+      "curiosidade": "O nome vem do grego \"phalaina\" (traça): as flores parecem traças em voo. É epífita, vive agarrada às árvores, e as raízes ao ar fazem fotossíntese, por isso são verdes. Uma floração pode durar 2–3 meses."
     },
     {
       "id": "14",
@@ -244,7 +270,9 @@
       "cedoDemais": "Terra húmida por baixo das pedras = cedo demais, mesmo com a superfície seca. Folhas amarelas e base do caule mole são excesso de água.",
       "intervaloDias": 10,
       "limiteDias": 16,
-      "dica": "Muito sensível a excesso de rega — a raiz apodrece com facilidade. Confirma que as pedras decorativas não travam a drenagem. O caule entrançado é decorativo, não é a forma natural da planta."
+      "dica": "Muito sensível a excesso de rega — a raiz apodrece com facilidade. Confirma que as pedras decorativas não travam a drenagem. O caule entrançado é decorativo, não é a forma natural da planta.",
+      "origem": "Pântanos da América Central e do norte da América do Sul.",
+      "curiosidade": "O tronco entrançado é uma técnica de cultivo, popularizada em Taiwan nos anos 1980; a planta, sozinha, cresce com um só tronco. Na natureza dá frutos grandes com sementes comestíveis, daí o nome \"castanha\"."
     },
     {
       "id": "15",
@@ -261,7 +289,9 @@
       "cedoDemais": "Substrato ainda escuro e fresco à superfície = espera. Frondes a estalar e a acastanhar nas pontas são falta de humidade no ar — borrifa, não adiantes a rega.",
       "intervaloDias": 6,
       "limiteDias": 10,
-      "dica": "Gosta de humidade no ar — borrifa as frondes de vez em quando. Os rizomas peludos ('pés-de-coelho') que saem do vaso são normais, não os cortes."
+      "dica": "Gosta de humidade no ar — borrifa as frondes de vez em quando. Os rizomas peludos ('pés-de-coelho') que saem do vaso são normais, não os cortes.",
+      "origem": "Ilhas Fiji, no Pacífico.",
+      "curiosidade": "Os rizomas peludos que se arrastam pela superfície dão-lhe o nome \"pés-de-coelho\". Servem para guardar água e para a planta se agarrar a troncos de árvore."
     },
     {
       "id": "16",
@@ -278,7 +308,9 @@
       "cedoDemais": "Se o dedo sai com terra agarrada, ainda é cedo. Folhas amarelas com o substrato sempre húmido são excesso de água, não falta — aí espaça as regas.",
       "intervaloDias": 9,
       "limiteDias": 15,
-      "dica": "Trepadeira resistente: podar as hastes compridas acima de um nó adensa a planta, e as pontas cortadas enraízam em água. Contém oxalato de cálcio: tóxica para gatos e cães."
+      "dica": "Trepadeira resistente: podar as hastes compridas acima de um nó adensa a planta, e as pontas cortadas enraízam em água. Contém oxalato de cálcio: tóxica para gatos e cães.",
+      "origem": "Ilhas do Pacífico, como a Polinésia Francesa, e Sudeste Asiático.",
+      "curiosidade": "Na natureza, a trepar por árvores, as folhas passam dos 60 cm; em vaso são bem mais pequenas. Em inglês chama-se \"devil's ivy\" porque mantém o verde mesmo com muito pouca luz."
     },
     {
       "id": "17",
@@ -295,7 +327,9 @@
       "cedoDemais": "Se o dedo sai com terra agarrada aos 2–3 cm, ainda é cedo. Folhas amarelas com o substrato húmido são excesso de água, não falta — espaça as regas.",
       "intervaloDias": 7,
       "limiteDias": 12,
-      "dica": "Trepadeira — beneficia de um tutor de musgo para desenvolver folhas maiores e mais furadas. Gosta de humidade no ar. Contém oxalato de cálcio: tóxica para gatos e cães."
+      "dica": "Trepadeira — beneficia de um tutor de musgo para desenvolver folhas maiores e mais furadas. Gosta de humidade no ar. Contém oxalato de cálcio: tóxica para gatos e cães.",
+      "origem": "América Central e do Sul, do México ao Brasil.",
+      "curiosidade": "Os buracos nas folhas (fenestrações) deixam passar a chuva e o vento na floresta. É muitas vezes confundida com a Monstera obliqua, muito mais rara, cujas folhas são quase só buracos."
     },
     {
       "id": "18",
@@ -310,7 +344,9 @@
       "medidor": "4",
       "verificar": "Dedo nos primeiros 2 cm: se estiver seco, rega. As folhas amolecem ligeiramente quando tem sede e recuperam depressa depois de regar.",
       "cedoDemais": "Se a terra ainda está fresca ao toque, espera. Folhas amarelas ou castanhas com a terra sempre molhada são excesso de água, não falta.",
-      "dica": "Rega junto ao substrato, sem molhar as folhas (fazem manchas) e com água à temperatura ambiente. Gosta de humidade no ar e de temperaturas entre 18 e 25 °C — afasta-a de correntes de ar e de aquecedores. Se o vaso de cerâmica não tiver furo, tira o vasinho de plástico para regar e deixa-o escorrer antes de o voltar a pôr. Não é tóxica para gatos nem cães."
+      "dica": "Rega junto ao substrato, sem molhar as folhas (fazem manchas) e com água à temperatura ambiente. Gosta de humidade no ar e de temperaturas entre 18 e 25 °C — afasta-a de correntes de ar e de aquecedores. Se o vaso de cerâmica não tiver furo, tira o vasinho de plástico para regar e deixa-o escorrer antes de o voltar a pôr. Não é tóxica para gatos nem cães.",
+      "origem": "América Central e do Sul tropicais, em florestas húmidas e sombrias.",
+      "curiosidade": "Chama-se \"planta-da-amizade\" porque se propaga com muita facilidade: as estacas são oferecidas entre amigos. As folhas enrugadas e acolchoadas são a marca da variedade 'Moon Valley'."
     }
   ]
 }

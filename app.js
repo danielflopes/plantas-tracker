@@ -41,26 +41,11 @@
     return '<p class="qty-note">Tens <strong>' + planta.quantidade + ' vasos</strong> desta planta.</p>';
   }
 
-  function checkBlock(planta){
-    if(!planta.verificar && !planta.cedoDemais) return '';
-    var html = '<div class="check-block">';
-    if(planta.verificar){
-      html += '<p class="check-go"><strong>Já precisa de água?</strong> ' + escapeHtml(planta.verificar) + '</p>';
-    }
-    if(planta.cedoDemais){
-      html += '<p class="check-wait"><strong>Ainda é cedo se…</strong> ' + escapeHtml(planta.cedoDemais) + '</p>';
-    }
-    return html + '</div>';
-  }
-
   function meterBadge(planta){
     if(planta.medidor == null) return '';
     return '<div class="lr-meter" title="Regar quando o medidor de humidade chegar a este valor (escala de 1 a 10)">Regar no <strong>' + escapeHtml(planta.medidor) + '</strong></div>';
   }
   function meterDetail(planta){
-    if(planta.medidor != null){
-      return '<p><strong>Medidor</strong> — rega quando o ponteiro chegar ao <strong>' + escapeHtml(planta.medidor) + '</strong> (ou abaixo), numa escala de 1 a 10. Confirma com o dedo.</p>';
-    }
     if(planta.medidorNota) return '<p><strong>Medidor</strong> — ' + escapeHtml(planta.medidorNota) + '</p>';
     return '';
   }
@@ -99,8 +84,9 @@
             '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
             meterDetail(planta) +
-            checkBlock(planta) +
-            '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
+            '<p><strong>Cuidados</strong> — ' + escapeHtml(planta.dica) + '</p>' +
+            '<p><strong>Origem</strong> — ' + escapeHtml(planta.origem) + '</p>' +
+            '<p><strong>Curiosidade</strong> — ' + escapeHtml(planta.curiosidade) + '</p>' +
             qtyNote(planta) +
           '</div>' +
         '</div>' +

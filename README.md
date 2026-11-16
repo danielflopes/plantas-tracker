@@ -29,7 +29,9 @@ Base de dados de consulta das plantas que tenho: para cada uma, a luz e a água 
   "medidor": "3",
   "verificar": "Como confirmar que já precisa de água (teste do dedo, peso do vaso…)",
   "cedoDemais": "O que indica que ainda é cedo, e o falso alarme típico desta planta",
-  "dica": "Cuidados especiais ou curiosidades."
+  "dica": "Cuidados especiais.",
+  "origem": "De onde vem a planta.",
+  "curiosidade": "Um facto curioso."
 }
 ```
 
@@ -38,7 +40,8 @@ Base de dados de consulta das plantas que tenho: para cada uma, a luz e a água 
 - `agua`: 1 = muito pouca · 2 = pouca · 3 = moderada · 4 = muita
 - `quantidade` (opcional): número de vasos, se tiveres mais do que um
 - `medidor` (opcional): valor do medidor de humidade (escala 1 a 10) em que se deve regar; aparece na lista, por baixo da luz e da água. Se o medidor não se aplicar (orquídea em casca, planta em água), usa `medidorNota` com a explicação.
-- `verificar` e `cedoDemais` (opcionais): como saber se a planta já precisa de água e qual o falso alarme típico. Aparecem num bloco destacado na ficha.
+- `origem` e `curiosidade`: aparecem na ficha, depois dos cuidados (`dica`).
+- `verificar` e `cedoDemais` (opcionais): como saber se a planta já precisa de água. Estão guardados mas já não aparecem na ficha.
 
 3. Acrescenta a ficha em [`dados/guia-plantas.md`](dados/guia-plantas.md) — o guia é a versão longa dos mesmos dados e deve ficar em sincronia com o `plantas.json`.
 4. Faz commit e push.

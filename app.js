@@ -53,6 +53,18 @@
     return html + '</div>';
   }
 
+  function meterBadge(planta){
+    if(planta.medidor == null) return '';
+    return '<div class="lr-meter" title="Regar quando o medidor de humidade chegar a este valor (escala de 1 a 10)">Regar no <strong>' + escapeHtml(planta.medidor) + '</strong></div>';
+  }
+  function meterDetail(planta){
+    if(planta.medidor != null){
+      return '<p><strong>Medidor</strong> — rega quando o ponteiro chegar ao <strong>' + escapeHtml(planta.medidor) + '</strong> (ou abaixo), numa escala de 1 a 10. Confirma com o dedo.</p>';
+    }
+    if(planta.medidorNota) return '<p><strong>Medidor</strong> — ' + escapeHtml(planta.medidorNota) + '</p>';
+    return '';
+  }
+
   function buildListRow(planta){
     var row = document.createElement('div');
     row.className = 'list-row plant-item';
@@ -71,7 +83,10 @@
           '<span class="lr-num">' + planta.id + '</span>' +
           '<span class="lr-name">' + escapeHtml(planta.nomeComum) + qtyBadge(planta) + '</span>' +
         '</button>' +
-        '<div class="lr-gauges">' + gaugeLuz(planta.luz) + gaugeAgua(planta.agua) + '</div>' +
+        '<div class="lr-side">' +
+          '<div class="lr-gauges">' + gaugeLuz(planta.luz) + gaugeAgua(planta.agua) + '</div>' +
+          meterBadge(planta) +
+        '</div>' +
       '</div>' +
       '<div class="lr-detail" id="' + detailId + '" hidden>' +
         '<div class="lr-detail-inner">' +
@@ -83,6 +98,7 @@
             '<p class="sci">' + escapeHtml(planta.nomeCientifico) + '</p>' +
             '<p><strong>Luz</strong> — ' + escapeHtml(planta.luzTexto) + '</p>' +
             '<p><strong>Água</strong> — ' + escapeHtml(planta.aguaTexto) + '</p>' +
+            meterDetail(planta) +
             checkBlock(planta) +
             '<p class="tip">' + escapeHtml(planta.dica) + '</p>' +
             qtyNote(planta) +

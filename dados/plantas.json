@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-16",
+  "atualizado": "2026-11-17",
   "notas": "local: interior | exterior. luz: 1=pouca 2=media 3=muita | agua: 1=muito pouca 2=pouca 3=moderada 4=muita | intervaloDias e limiteDias: dados antigos de rega, já não aparecem na app (guardados) | medidor: valor (1 a 10) do medidor de humidade em que se deve regar; medidorNota: quando não se aplica | origem e curiosidade: texto curto mostrado na ficha | verificar e cedoDemais: já não aparecem na app (guardados)",
   "plantas": [
     {
@@ -347,6 +347,96 @@
       "dica": "Rega junto ao substrato, sem molhar as folhas (fazem manchas) e com água à temperatura ambiente. Gosta de humidade no ar e de temperaturas entre 18 e 25 °C — afasta-a de correntes de ar e de aquecedores. Se o vaso de cerâmica não tiver furo, tira o vasinho de plástico para regar e deixa-o escorrer antes de o voltar a pôr. Não é tóxica para gatos nem cães.",
       "origem": "América Central e do Sul tropicais, em florestas húmidas e sombrias.",
       "curiosidade": "Chama-se \"planta-da-amizade\" porque se propaga com muita facilidade: as estacas são oferecidas entre amigos. As folhas enrugadas e acolchoadas são a marca da variedade 'Moon Valley'."
+    },
+    {
+      "id": "19",
+      "nomeComum": "Margarida-africana",
+      "nomeCientifico": "Osteospermum (híbrido)",
+      "local": "exterior",
+      "foto": "fotos/19-osteospermum.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol direto, pelo menos 6 horas por dia; com pouco sol dá poucas flores",
+      "agua": 3,
+      "aguaTexto": "Moderada — rega quando os primeiros 2–3 cm secam; aguenta alguma seca, mas não o encharcamento",
+      "medidor": "4",
+      "dica": "Corta as flores murchas e os caules secos para dar mais flores. No verão muito quente floresce menos, é normal; volta com o tempo mais fresco. Sensível à geada forte.",
+      "origem": "África do Sul.",
+      "curiosidade": "As flores fecham à noite e em dias nublados. O nome vem do grego: \"osteon\" (osso) e \"sperma\" (semente), por causa das sementes duras."
+    },
+    {
+      "id": "20",
+      "nomeComum": "Rosmaninho / Lavanda-francesa",
+      "nomeCientifico": "Lavandula stoechas",
+      "local": "exterior",
+      "foto": "fotos/20-lavandula-stoechas.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol direto o dia todo",
+      "agua": 1,
+      "aguaTexto": "Muito pouca — deixa o substrato secar bem entre regas; o excesso de água mata-a mais depressa do que a seca",
+      "medidor": "1–2",
+      "dica": "Precisa de substrato muito drenante e de vaso com furos. Depois da floração, poda ligeiramente sem cortar a madeira velha, para não ficar lenhosa. Pode ser tóxica para gatos e cães se ingerida em quantidade.",
+      "origem": "Região mediterrânica, incluindo Portugal e Espanha.",
+      "curiosidade": "As \"orelhas\" roxas no topo não são pétalas, são folhas coloridas (brácteas). As flores verdadeiras são as pequenas, escuras, por baixo."
+    },
+    {
+      "id": "21",
+      "nomeComum": "Abacateiro",
+      "nomeCientifico": "Persea americana",
+      "local": "exterior",
+      "foto": "fotos/21-abacateiro.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol, mas abrigado do vento forte e da geada",
+      "agua": 3,
+      "aguaTexto": "Moderada — rega quando os primeiros 3–4 cm secam; nunca deixes a água parada",
+      "medidor": "4",
+      "dica": "Pontas e bordos castanhos nas folhas são comuns em plantas jovens, por sol e vento fortes, sais da água ou rega irregular. É sinal de stress, não de que morreu. Protege da geada. Tóxico para gatos, cães e aves.",
+      "origem": "México e América Central.",
+      "curiosidade": "O nome vem do náuatle \"ahuacatl\". Uma planta nascida de caroço demora muitos anos (5 a 13) a dar fruta, e pode nem chegar a dar."
+    },
+    {
+      "id": "22",
+      "nomeComum": "Aptenia",
+      "nomeCientifico": "Aptenia cordifolia",
+      "local": "exterior",
+      "foto": "fotos/22-aptenia-cordifolia.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol direto; tolera meia-sombra",
+      "agua": 2,
+      "aguaTexto": "Pouca — suculenta: deixa a terra secar entre regas; aguenta bem alguns esquecimentos",
+      "medidor": "3",
+      "dica": "Cresce depressa e cai pelas bordas do vaso; corta os excessos. As estacas enraízam com muita facilidade. Sensível à geada.",
+      "origem": "África do Sul.",
+      "curiosidade": "As pequenas flores cor-de-rosa-escuro só abrem com sol e fecham ao fim do dia."
+    },
+    {
+      "id": "23",
+      "nomeComum": "Oscularia",
+      "nomeCientifico": "Oscularia deltoides",
+      "local": "exterior",
+      "foto": "fotos/23-oscularia-deltoides.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol direto",
+      "agua": 1,
+      "aguaTexto": "Muito pouca — folhas carnudas que guardam água; o encharcamento apodrece-a",
+      "medidor": "1–2",
+      "dica": "Poda depois da floração para manter compacta. Os pedaços cortados enraízam com facilidade.",
+      "origem": "África do Sul, na região do Cabo.",
+      "curiosidade": "As folhas cinzento-azuladas têm pontas dentadas e as hastes ficam avermelhadas ao sol. Na primavera dá flores cor-de-rosa perfumadas."
+    },
+    {
+      "id": "24",
+      "nomeComum": "Maracujá",
+      "nomeCientifico": "Passiflora (espécie por confirmar)",
+      "local": "exterior",
+      "foto": "fotos/24-maracuja.jpg",
+      "luz": 3,
+      "luzTexto": "Muita — sol direto, pelo menos 6 horas por dia",
+      "agua": 3,
+      "aguaTexto": "Moderada — rega bem quando os primeiros 3 cm secam; precisa de mais água no verão e quando tem fruta",
+      "medidor": "4",
+      "dica": "Trepadeira vigorosa: dá-lhe grade ou fios para subir e poda no fim do inverno. Come só frutos maduros; os verdes não se comem.",
+      "origem": "América tropical e subtropical.",
+      "curiosidade": "\"Passiflora\" quer dizer \"flor da Paixão\": missionários espanhóis viram nas flores símbolos da Paixão de Cristo, como a coroa de espinhos."
     }
   ]
 }

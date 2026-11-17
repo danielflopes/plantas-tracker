@@ -437,6 +437,21 @@
       "dica": "Trepadeira vigorosa: dá-lhe grade ou fios para subir e poda no fim do inverno. Come só frutos maduros; os verdes não se comem.",
       "origem": "América tropical e subtropical.",
       "curiosidade": "\"Passiflora\" quer dizer \"flor da Paixão\": missionários espanhóis viram nas flores símbolos da Paixão de Cristo, como a coroa de espinhos."
+    },
+    {
+      "id": "25",
+      "nomeComum": "Fátsia / Aralia-do-Japão",
+      "nomeCientifico": "Fatsia japonica",
+      "local": "exterior",
+      "foto": "fotos/25-fatsia.jpg",
+      "luz": 2,
+      "luzTexto": "Média — luz indireta ou meia-sombra; o sol direto queima as folhas e deixa os bordos castanhos",
+      "agua": 3,
+      "aguaTexto": "Moderada — mantém o substrato ligeiramente húmido; não gosta de secar por completo nem de ficar encharcada",
+      "medidor": "4",
+      "dica": "Folhas com bordos castanhos ou enrolados costumam ser sol a mais ou falta de água. Protege do sol forte do meio do dia. Resiste bem ao frio, mas não ao vento seco.",
+      "origem": "Sul do Japão e Taiwan.",
+      "curiosidade": "Pertence à família da hera. Cruzada com uma hera deu origem a um híbrido, a Fatshedera. No outono dá bolas de pequenas flores brancas e depois frutos pretos."
     }
   ]
 }
